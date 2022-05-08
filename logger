@@ -1,0 +1,10 @@
+# logs keystrokes of the user
+# long term aim to take user keystrokes, then adjust digital keyboard based on
+# user's most used clicks for faster and more streamlined typing experience
+
+import keyboard
+
+while True:
+    if keyboard.read_key() == 'p':
+        print('You pressed p!')
+        break
