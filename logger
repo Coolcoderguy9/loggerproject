@@ -3,8 +3,16 @@
 # user's most used clicks for faster and more streamlined typing experience
 
 import keyboard
+import time
 
-while True:
-    if keyboard.read_key() == 'p':
-        print('You pressed p!')
-        break
+start_time = time.time()
+log = []
+
+def logger():
+    if keyboard.read_key():
+        log.append(keyboard.read_key)
+    return log
+
+
+while (time.time() - start_time) < 10:
+    logger()
